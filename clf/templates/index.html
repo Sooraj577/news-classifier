@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Classifier</title>
+    <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+
+<form method="post">{% csrf_token %}
+    <h1>News Classifier</h1><br><br>
+    <label for="news">Please paste your text </label><br>
+    <br>
+    <textarea id="news" type="text" name="news_text" rows="20" cols="100" placeholder="Paste text having minimum 200 words"></textarea>
+    <br><br>
+    <input type="submit" value="Submit">
+    <br>
+    <br>
+    <table style="width:100%">
+    {% for k,v in result.items %}
+    <tr>
+        <th>
+            {{ k }}
+        </th>
+        <td>
+            {{ v }}
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+</form>
+
+</body>
+</html>
