@@ -11,6 +11,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.ensemble import RandomForestClassifier
 # Create your views here.
 
+
 def get_news(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -45,11 +46,7 @@ def get_news(request):
             elif new_pred == [1]:
                 result = "Tech News"
 
-            result_dict = {
-                'Text': "",
-                'Result': "",
-            }
-
+            result_dict = dict()
             result_dict['Text'] = news_text
             result_dict['Result'] = result
             return render(request, 'index.html', {'result': result_dict})

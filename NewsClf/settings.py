@@ -25,7 +25,7 @@ MODEL_ROOT = os.path.join(BASE_DIR, "model")
 SECRET_KEY = 'z0@9akiccaxxmpy9+l%n&awh$4eh__si!)5$n4c+i56$=l!462'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
